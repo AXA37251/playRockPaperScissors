@@ -3,14 +3,15 @@ const buttons = document.querySelectorAll('button');
 //para c/u, agrego una escucha que dispara la ronda
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-      playRound(button.id);               
+      let playerSelection = button.id.toString();
+      playRound(playerSelection);               
     });
 });
 
-function playRound(playerChoice){
-    let playerSelection = playerChoice.toString();
-    let computerSelection = computerChoice();
-    round(playerSelection, computerSelection);
+function playRound(playerSelection){
+    let playerWeapon = playerSelection;
+    let computerWeapon = computerChoice();
+    round(playerWeapon, computerWeapon);
 }
 
 function computerChoice(){
@@ -26,27 +27,27 @@ function computerChoice(){
     return computerChoice;
 }
 
-function round(playerSelection, computerSelection){
-    if( playerSelection.toUpperCase() == computerSelection.toUpperCase()){
-        console.log('It\'s a tie, computer choose: ' + computerSelection);
+function round(playerWeapon, computerWeapon){
+    if( playerSelection.toUpperCase() == computerWeapon.toUpperCase()){
+        console.log('It\'s a tie, computer choose: ' + computerWeapon);
     }
-    else if (playerSelection.toUpperCase() == 'ROCK'){
-        if(computerSelection.toUpperCase() == 'PAPER'){
-            return console.log('You lose, computer choose:' + computerSelection)}
+    else if (playerWeapon.toUpperCase() == 'ROCK'){
+        if(computerWeapon.toUpperCase() == 'PAPER'){
+            return console.log('You lose, computer choose:' + computerWeapon)}
         else{
-            return console.log('You win! computer choose:' + computerSelection)}
+            return console.log('You win! computer choose:' + computerWeapon)}
     }
-    else if (playerSelection.toUpperCase() == 'PAPER'){
-        if(computerSelection.toUpperCase() == 'SCISSORS'){
-            return console.log('You lose, computer choose: ' + computerSelection)}
+    else if (playerWeapon.toUpperCase() == 'PAPER'){
+        if(computerWeapon.toUpperCase() == 'SCISSORS'){
+            return console.log('You lose, computer choose: ' + computerWeapon)}
         else{
-            return console.log('You win! computer choose: ' + computerSelection)}
+            return console.log('You win! computer choose: ' + computerWeapon)}
     }
-    else if (playerSelection.toUpperCase() == 'SCISSORS'){
-        if(computerSelection.toUpperCase() == 'ROCK'){
-            return console.log('You lose, computer choose: ' + computerSelection)}
+    else if (playerWeapon.toUpperCase() == 'SCISSORS'){
+        if(computerWeapon.toUpperCase() == 'ROCK'){
+            return console.log('You lose, computer choose: ' + computerWeapon)}
         else{
-            return console.log('You win! computer choose: '  + computerSelection)}
+            return console.log('You win! computer choose: '  + computerWeapon)}
     }
     else{
         console.log('pls, try to choose between these option: rock, paper or scissors')
