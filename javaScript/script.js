@@ -1,6 +1,14 @@
-function game(){
-    let eleccion= prompt("What's your choice? (rock - paper - scissors");
-    let playerSelection = eleccion.toUpperCase();
+//declaro un array de botones, a partir de la selección
+const buttons = document.querySelectorAll('button');
+//para c/u, agrego una escucha que dispara la ronda
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      playRound(button.id);               
+    });
+});
+
+function playRound(playerChoice){
+    let playerSelection = playerChoice.toString();
     let computerSelection = computerChoice();
     round(playerSelection, computerSelection);
 }
@@ -8,31 +16,44 @@ function game(){
 function computerChoice(){
     let numeroRandom = Math.random();
     let computerChoice;
-    if(numeroRandom<0.33)                               { computerChoice = 'Rock' }
-    else if (numeroRandom>=0.33 && numeroRandom<0.66)   { computerChoice = 'Paper'}
-    else                                                { computerChoice = 'Scissors'}
+    if(numeroRandom<0.33){ 
+        computerChoice = 'Rock' 
+    }else if(numeroRandom>=0.33 && numeroRandom<0.66){ 
+        computerChoice = 'Paper'
+    }else{ 
+        computerChoice = 'Scissors'
+    } 
     return computerChoice;
 }
-
 
 function round(playerSelection, computerSelection){
     if( playerSelection.toUpperCase() == computerSelection.toUpperCase()){
         console.log('It\'s a tie, computer choose: ' + computerSelection);
     }
     else if (playerSelection.toUpperCase() == 'ROCK'){
-        if(computerSelection.toUpperCase() == 'PAPER')      {return console.log('You lose, computer choose: paper')    }
-        else                                                {return console.log('You win! computer choose: scissors')  }
+        if(computerSelection.toUpperCase() == 'PAPER'){
+            return console.log('You lose, computer choose:' + computerSelection)}
+        else{
+            return console.log('You win! computer choose:' + computerSelection)}
     }
     else if (playerSelection.toUpperCase() == 'PAPER'){
-        if(computerSelection.toUpperCase() == 'SCISSORS')   {return console.log('You lose, computer choose: scissors') }
-        else                                                {return console.log('You win! computer choose: rock')      }
+        if(computerSelection.toUpperCase() == 'SCISSORS'){
+            return console.log('You lose, computer choose: ' + computerSelection)}
+        else{
+            return console.log('You win! computer choose: ' + computerSelection)}
     }
     else if (playerSelection.toUpperCase() == 'SCISSORS'){
-        if(computerSelection.toUpperCase() == 'ROCK')       {return console.log('You lose, computer choose: rock')     }
-        else                                                {return console.log('You win! computer choose: paper')     }
+        if(computerSelection.toUpperCase() == 'ROCK'){
+            return console.log('You lose, computer choose: ' + computerSelection)}
+        else{
+            return console.log('You win! computer choose: '  + computerSelection)}
     }
-    else    {console.log('pls, try to choose between these option: rock, paper or scissors')}
+    else{
+        console.log('pls, try to choose between these option: rock, paper or scissors')
+    }
 }
+
+
 
 //Prueba de funcionamiento del sistema de elección
 function pruebaTiro(){
@@ -42,5 +63,5 @@ function pruebaTiro(){
     }
 }
 
-game();
+
 
