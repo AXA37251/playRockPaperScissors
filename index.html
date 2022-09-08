@@ -12,9 +12,9 @@
             <h1>Rock, Paper & Scissors</h1>
             <button onclick="game()">Start Game</button>
         <div class="container">
-            <button class="rock"> Rock</button>
-            <button class="paper"> Paper</button>
-            <button class="scissors"> Scissors</button>
+            <button class="rock" value="rock"> Rock</button>
+            <button class="paper" value="paper"> Paper</button>
+            <button class="scissors" value="scissors"> Scissors</button>
         </div>
         <div class="outcome">
             <span class = "player-score"></span>
@@ -23,3 +23,26 @@
     </body>
     <script defer src="main.js"></script>
 </html>
+
+<!--
+    oportunidades de mejora:
+    poder agregar animación inicial que relate historia:
+        historia: a vos y a X los están por despedir,
+            la empresa decidió hacer un esfuerzo y contratar al hijo del dueño.
+            Dicho esfuerzo requiere un cimbronazo, hay que echar a alguien.
+            El boss no se decide, la decisión está entre vos y fulano.
+            El jugador juega un RP&S contra fulano por mantener su puesto de trabajo
+        animaciones:
+        0) la página inicia y cuenta la historia de prepo. (ver si no combiene después de algún evento)
+        a) cuando se aprieta el botón "Start Game",
+            a.1) desaparece botón start game
+            a.2) aparecen botones piedra, papel, tijera y puntajes
+        b) los botones pp&t pueden ser seleccionados o presionados 
+        c) agregar división con flex que funcione como "log" de batalla
+        d) una vez llegado a los 5 puntos, se muestra alguno de los finales opcionales.
+            d.1) desaparecen las opciones rock paper and scissor
+            d.2) vuelve a aparecen boton start game
+                d.2.i) cambia el nombre del botón por "start new game"
+            d.3) el sistema olvida los valores almacenados.
+        e) es necesario ordenar el diseño flex y darle aire a la página, capáz esto se superponga con otra tarea.
+-->
