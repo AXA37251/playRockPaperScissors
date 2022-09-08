@@ -6,6 +6,7 @@ function game(){
         playRound(i);
     }
     logWins();
+    document.querySelector("button").textContent = "New Game";
 }
 
 function playRound(round){
@@ -49,7 +50,7 @@ function validateInput(choice){
 
 function checkWinner(choiceP, choiceC){
     if(choiceP === choiceC){
-        //alert("its a tie, both choose "+choiceP); 
+        //alert("its a tie, both choose ",choiceP); 
         return "Tie"; 
     }else if(
         (choiceP === "rock"     && choiceC == "scissors")   || 
